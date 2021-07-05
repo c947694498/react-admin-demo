@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import routes from './router/routes'
+import {RenderRouter} from './router'
+// import {Switch, Route} from 'react-router-dom'
+// import Home from './views/Home'
+// import My from './views/My'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,7 +20,12 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <RenderRouter routes={routes}></RenderRouter>
+      {/* <Switch>
+        <Route path="/Home">{Home}</Route>
+        <Route path="/My">{My}</Route>
+      </Switch> */}
     </div>
   );
 }
