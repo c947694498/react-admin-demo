@@ -7,10 +7,7 @@ export const RenderRouter = ({ routes }) => {
       {
         routes && routes.map(route => {
           return (
-            <Route path={route.path} key={route.name}>
-              {
-                route.component
-              }
+            <Route path={route.path} key={route.name} component={route.component}>
             </Route>
           )
         })

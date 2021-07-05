@@ -1,5 +1,6 @@
-import Home from "../views/Home"
-import My from "../views/My"
+import Home from "../pages/Home"
+import My from "../pages/My"
+import NotFound from '../pages/NotFound'
 
 const routes = [
   {
@@ -8,9 +9,14 @@ const routes = [
     component: Home,
   },
   {
-    path: '/My',
+    path: '/My/:id',
     name: 'My',
     component: My
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
