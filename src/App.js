@@ -1,6 +1,6 @@
 import './App.css';
 import routes from './router/routes'
-import {RenderRouter} from './router'
+import RenderRouter from './router/RenderRouter'
 // import {Switch, Route} from 'react-router-dom'
 // import Home from './views/Home'
 // import My from './views/My'
