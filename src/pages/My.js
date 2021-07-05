@@ -1,6 +1,6 @@
-const My = (props) => {
+const My = ({match: {params: matchParams}}) => {
   return (
-    <div>My</div>
+    <>My{matchParams.id}</>
   )
 }
 export default My
