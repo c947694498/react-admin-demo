@@ -1,16 +1,22 @@
 import { Switch, Route } from "react-router-dom";
+import { Suspense } from 'react'
+import RouterLoading from './RouterLoading'
 
 const RenderRouter = ({ routes }) => {
-
   return (
-    <Switch>
-      {routes && routes.map(route => {
-        return (
-          <Route path={route.path} key={route.path} component={route.component}>
+    <Suspense fallback={RouterLoading()}>
+      <Switch>
+        {routes && routes.map(route => (
+          <Route
+            exact
+            path={route.path}
+            key={route.path}
+            >
+              <route.component></route.component>
           </Route>
-        );
-      })}
-    </Switch>
+        ))}
+      </Switch>
+    </Suspense>
   );
 };
 

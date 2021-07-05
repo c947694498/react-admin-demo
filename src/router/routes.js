@@ -1,19 +1,18 @@
-import Home from "../pages/Home"
-import My from "../pages/My"
-import NotFound from '../pages/NotFound'
+import { lazy } from "react"
 
 const routes = [
+
   {
     path: '/Home',
-    component: Home,
+    component: lazy(() => import('../pages/Home'))
   },
   {
     path: '/My/:id',
-    component: My
+    component: lazy(() => import('../pages/My'))
   },
   {
     path: '*',
-    component: NotFound
+    component: lazy(() => import('../pages/NotFound'))
   }
 ]
 
