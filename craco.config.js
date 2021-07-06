@@ -1,10 +1,23 @@
 /* craco.config.js */
-const {join} = require('path')
-const WebpackBar = require('webpackbar')
+// const {whenProd} = require('@craco/craco')
+const { join } = require('path')
 const CracoLessPlugin = require('craco-less')
-const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin')
-
+// const WebpackBar = require('webpackbar')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+// const CompressionWebpackPlugin = require('compression-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
+// const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+// const smp = new SpeedMeasurePlugin();
+// const threadLoader = require('thread-loader');
 const resolve = dir => join(__dirname, dir)
+
+// const jsWorkerPool = {
+//   workers: 2,
+//   poolTimeout: 2000
+// }
+
+// // 开启多线程
+// threadLoader.warmup(jsWorkerPool, ['babel-loader'])
 
 module.exports = {
   webpack: {
@@ -12,12 +25,6 @@ module.exports = {
       '@': resolve('src')
     },
     plugins: [
-      // webpack构建进度条
-      new WebpackBar({
-        profile: true
-      }),
-      // 观察打包进度
-      new SimpleProgressWebpackPlugin(),
     ]
   },
   babel: {
