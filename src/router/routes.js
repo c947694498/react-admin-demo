@@ -7,8 +7,14 @@ const routes = [
     component: lazy(() => import('../pages/Home'))
   },
   {
-    path: '/My/:id',
-    component: lazy(() => import('../pages/My'))
+    path: '/My',
+    component: lazy(() => import('../pages/My')),
+    children: [
+      {
+        path: '/ChildA',
+        component: lazy(() => import('../pages/ChildA'))
+      }
+    ]
   },
   {
     path: '*',
