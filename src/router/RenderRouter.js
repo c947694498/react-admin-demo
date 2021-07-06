@@ -5,6 +5,7 @@ import RouterLoading from './RouterLoading'
 import ULayout from '../components/ULayout/ULayout'
 
 const RenderRouter = ({ routes }) => {
+
   const createComponent = (route, props) => {
     const RLayout = route.layout
     const Component = route.component
@@ -32,11 +33,7 @@ const RenderRouter = ({ routes }) => {
 
   return (
     <Suspense fallback={RouterLoading()}>
-      <Switch>
-        {
-          routes && routes.map(route => createRoute(route))
-        }
-      </Switch>
+      <Switch>{routes && routes.map(route => createRoute(route))}</Switch>
     </Suspense>
   );
 };
