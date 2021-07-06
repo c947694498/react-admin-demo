@@ -9,12 +9,6 @@ const routes = [
   {
     path: '/My',
     component: lazy(() => import('../pages/My')),
-    children: [
-      {
-        path: '/ChildA',
-        component: lazy(() => import('../pages/ChildA'))
-      }
-    ]
   },
   {
     path: '*',
