@@ -1,3 +1,5 @@
+import './Login.scss'
+
 const Login = () => {
   return <>Login</>
 }

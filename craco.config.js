@@ -2,6 +2,7 @@
 // const {whenProd} = require('@craco/craco')
 const { join } = require('path')
 const CracoLessPlugin = require('craco-less')
+const CracoAlias = require("craco-alias");
 // const WebpackBar = require('webpackbar')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 // const CompressionWebpackPlugin = require('compression-webpack-plugin');
@@ -9,7 +10,7 @@ const CracoLessPlugin = require('craco-less')
 // const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // const smp = new SpeedMeasurePlugin();
 // const threadLoader = require('thread-loader');
-const resolve = dir => join(__dirname, dir)
+// const resolve = dir => join(__dirname, dir)
 
 // const jsWorkerPool = {
 //   workers: 2,
@@ -20,13 +21,6 @@ const resolve = dir => join(__dirname, dir)
 // threadLoader.warmup(jsWorkerPool, ['babel-loader'])
 
 module.exports = {
-  webpack: {
-    alias: {
-      '@': resolve('src')
-    },
-    plugins: [
-    ]
-  },
   babel: {
     presets: [
       // ...
@@ -37,6 +31,18 @@ module.exports = {
     ]
   },
   plugins: [
+    // alias
+    {
+      plugin: CracoAlias,
+      options: {
+        source: "tsconfig",
+        // baseUrl SHOULD be specified
+        // plugin does not take it from tsconfig
+        baseUrl: "./src",
+        // tsConfigPath should point to the file where "baseUrl" and "paths" are specified
+        tsConfigPath: "./tsconfig.extend.json"
+      }
+    },
     // less loader 修改ant主题
     {
       plugin: CracoLessPlugin,

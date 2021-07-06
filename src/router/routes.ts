@@ -1,33 +1,30 @@
+import { IRoutes } from './routes.type';
 import { lazy } from "react"
-import ULayoutPlain from '@/components/ULayoutPlain/ULayoutPlain'
+import ULayoutPlain from '@src/components/ULayoutPlain/ULayoutPlain'
 
-interface Route {
-  path: string,
-}
-
-const routes = [
+const routes: IRoutes = [
   {
     path: '/Login',
     layout: ULayoutPlain,
-    component: lazy(() => import('@/pages/Login/Login'))
+    component: lazy(() => import('@src/pages/Login/Login'))
   },
   {
     path: '/Register',
     layout: ULayoutPlain,
-    component: lazy(() => import('@/pages/Register/Register')),
+    component: lazy(() => import('@src/pages/Register/Register')),
   },
   {
     path: '/Home',
-    component: lazy(() => import('@/pages/Home/Home'))
+    component: lazy(() => import('@src/pages/Home/Home'))
   },
   {
     path: '/My',
-    component: lazy(() => import('@/pages/My/My')),
+    component: lazy(() => import('@src/pages/My/My')),
   },
   {
     path: '*',
     layout: null,
-    component: lazy(() => import('@/pages/NotFound/NotFound'))
+    component: lazy(() => import('@src/pages/NotFound/NotFound'))
   }
 ]
 

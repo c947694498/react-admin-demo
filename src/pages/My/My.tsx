@@ -1,13 +1,11 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 interface IParams {
-  id: string
+  id: string;
 }
 
 const My = () => {
-  const params = useParams<IParams>()
-  return (
-    <>My{params.id}</>
-  )
-}
-export default My
+  const params = useParams<IParams>();
+  return <>My{params.id}</>;
+};
+export default My;

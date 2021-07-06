@@ -2,18 +2,23 @@ import { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Suspense } from "react";
 import RouterLoading from "./RouterLoading";
-import ULayout from "../components/ULayout/ULayout";
+import { IRoutes, IRoute } from "./routes.type";
+import ULayout from "@src/components/ULayout/ULayout";
 
-const RenderRouter = ({ routes }) => {
-  const createComponent = (route, props) => {
+interface IProps {
+  routes: IRoutes;
+}
+
+const RenderRouter = ({ routes }: IProps) => {
+  const createComponent = (route: IRoute, props: any) => {
     const RLayout = route.layout;
     const Component = route.component;
-    let Layout:any = Fragment;
+    let Layout: any = Fragment;
 
     if (RLayout === undefined) {
       Layout = ULayout;
     } else if (RLayout) {
-      Layout = RLayout;
+    Layout = RLayout;
     }
     return (
       <Layout>
@@ -22,7 +27,7 @@ const RenderRouter = ({ routes }) => {
     );
   };
 
-  const createRoute = (route) => {
+  const createRoute = (route: IRoute) => {
     return (
       <Route
         exact
