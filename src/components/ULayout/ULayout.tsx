@@ -1,10 +1,18 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { Layout, Menu, Breadcrumb } from "antd";
+import {
+  UserOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+} from "@ant-design/icons";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-const ULayout = props => {
+interface IProps {
+  children: JSX.Element
+}
+
+const ULayout = (props: IProps) => {
   return (
     <Layout>
       <Header className="header">
