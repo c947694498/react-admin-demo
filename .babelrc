@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    [ "import", {
+      "libraryName": "ant",
+      "libraryDirectory": "es",
+      "style": "css"
+    } ]
+  ]
+}
