@@ -1,6 +1,10 @@
 import { lazy } from "react"
 import ULayoutPlain from '@/components/ULayoutPlain/ULayoutPlain'
 
+interface Route {
+  path: string,
+}
+
 const routes = [
   {
     path: '/Login',
