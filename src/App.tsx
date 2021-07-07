@@ -7,8 +7,8 @@ import routesMenus from "@src/router/routes/routes.menus";
 import routesBase from "@src/router/routes/routes.base";
 import routesError from "@src/router/routes/routes.error";
 import ULayoutBase from "@src/components/ULayoutBase/ULayoutBase";
+import ULayout from "@src/components/ULayout/ULayout";
 import "./App.less";
-import ULayout from "./components/ULayout/ULayout";
 
 const App = () => {
   return (
