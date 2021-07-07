@@ -1,14 +1,17 @@
 import { lazy } from 'react';
+import { IRouteBases } from '../routes.type';
 
-const routesBase = [
+const routesBase: IRouteBases = [
+  {
+    path: '/',
+    redirect: '/Home',
+  },
   {
     path: '/Login',
-    name: 'Login',
     component: lazy(() => import('@src/pages/Login/Login'))
   },
   {
     path: '/Register',
-    name: 'Register',
     component: lazy(() => import('@src/pages/Register/Register'))
   },
 ]

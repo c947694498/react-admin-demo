@@ -10,11 +10,17 @@ export interface IRouteMenu {
 export type IRouteMenus = IRouteMenu[];
 
 // 路由配置
-export type IRoute = {
+export type IRouteBase = {
   // 路径
   path: string;
   // 组件
-  component: any;
+  component?: any;
+  // 重定向
+  redirect?: string;
+  // 精确匹配
+  exact?: boolean;
+  // 严格匹配
+  strict?: boolean;
 };
 
-export type IRoutes = IRoute[];
+export type IRouteBases = IRouteBase[];

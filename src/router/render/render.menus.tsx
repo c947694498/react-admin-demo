@@ -3,7 +3,7 @@ import { IRouteMenu, IRouteMenus } from "../routes.type";
 
 interface IProps {
   routes: IRouteMenus;
-  layout: any
+  layout: any;
 }
 
 const RouterRenderMenus = ({ routes: menus, layout: Layout }: IProps) => {
@@ -17,8 +17,8 @@ const RouterRenderMenus = ({ routes: menus, layout: Layout }: IProps) => {
           return (
             <Layout>
               <menu.component {...props}></menu.component>
-            </Layout> 
-          )
+            </Layout>
+          );
         }}
       ></Route>
     );
