@@ -1,8 +1,13 @@
 import './Home.scss'
 
-const Home = () => {
+interface IProps {
+}
+
+const Home = (props:IProps) => {
   return (
-    <>Home</>
+    <>
+      <div>Home</div>
+    </>
   )
 }
 export default Home

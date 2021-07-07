@@ -1,11 +1,20 @@
+// 菜单路由配置
+export interface IRouteMenu {
+  path: string;
+  title?: string;
+  component?: any;
+  hidden?: boolean;
+  subMenu?: IRouteMenus;
+}
+
+export type IRouteMenus = IRouteMenu[];
+
 // 路由配置
 export type IRoute = {
   // 路径
-  path: string
-  // 布局
-  layout?: ((props: any) => JSX.Element) | null,
+  path: string;
   // 组件
-  component: any
+  component: any;
 };
 
 export type IRoutes = IRoute[];

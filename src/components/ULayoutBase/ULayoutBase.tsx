@@ -6,7 +6,7 @@ interface IProps {
   children: JSX.Element;
 }
 
-const ULayoutPlain = (props: IProps) => {
+const ULayoutBase = (props: IProps) => {
   return (
     <Layout className="layout">
       <Header>
@@ -24,4 +24,4 @@ const ULayoutPlain = (props: IProps) => {
   );
 };
 
-export default ULayoutPlain;
+export default ULayoutBase;
