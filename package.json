@@ -53,6 +53,7 @@
     "compression-webpack-plugin": "^8.0.1",
     "craco-alias": "^3.0.1",
     "craco-less": "^1.18.0",
+    "cz-conventional-changelog": "^3.3.0",
     "node-sass": "^5.0.0",
     "source-map-explorer": "^2.5.2",
     "speed-measure-webpack-plugin": "^1.5.0",
@@ -60,5 +61,10 @@
     "thread-loader": "^3.0.4",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpackbar": "^5.0.0-3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
