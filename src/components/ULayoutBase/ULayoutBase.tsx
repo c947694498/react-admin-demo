@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import { memo } from "react";
 
 const { Header, Content, Footer } = Layout;
 
@@ -6,7 +7,7 @@ interface IProps {
   children: JSX.Element;
 }
 
-const ULayoutBase = (props: IProps) => {
+const ULayoutBase = memo((props: IProps) => {
   return (
     <Layout className="layout">
       <Header>
@@ -22,6 +23,6 @@ const ULayoutBase = (props: IProps) => {
       </Footer>
     </Layout>
   );
-};
+});
 
 export default ULayoutBase;

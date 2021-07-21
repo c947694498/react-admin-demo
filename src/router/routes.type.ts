@@ -1,9 +1,14 @@
 // 菜单路由配置
 export interface IRouteMenu {
+  // 路径
   path: string;
+  // 标题
   title?: string;
+  // 组件
   component?: any;
+  // 隐藏
   hidden?: boolean;
+  // 子菜单
   subMenu?: IRouteMenus;
 }
 
@@ -17,10 +22,6 @@ export type IRouteBase = {
   component?: any;
   // 重定向
   redirect?: string;
-  // 精确匹配
-  exact?: boolean;
-  // 严格匹配
-  strict?: boolean;
 };
 
 export type IRouteBases = IRouteBase[];

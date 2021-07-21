@@ -2,7 +2,9 @@ import { Redirect, Route } from "react-router-dom";
 import { IRouteBases } from "../routes.type";
 
 interface IProps {
+  // 路由合集
   routes: IRouteBases;
+  // 布局组件
   layout: any;
 }
 
@@ -12,7 +14,7 @@ const RouterRenderBase = ({ routes, layout: Layout }: IProps) => {
       return (
         <Redirect
           exact
-          path={route.path}
+          from={route.path}
           to={route.redirect}
           key={route.path}
         ></Redirect>
@@ -24,10 +26,12 @@ const RouterRenderBase = ({ routes, layout: Layout }: IProps) => {
         path={route.path}
         key={route.path}
         render={(props) => {
-          return (
+          return Layout ? (
             <Layout>
               <route.component {...props}></route.component>
             </Layout>
+          ) : (
+            <route.component {...props}></route.component>
           );
         }}
       ></Route>
